@@ -72,6 +72,16 @@ void ofxSocketIO::emit (std::string& eventName, std::string& data, string nsp) {
   }
 }
 
+void ofxSocketIO::emit(std::string& eventName, sio::message::list const& msglist, string nsp) {
+	if (client.opened()) {
+		client.socket(nsp)->emit(eventName, msglist);
+	}
+	else {
+		ofLogWarning("ofxSocketIO", "socket is not available.");
+	}
+}
+
+
 void ofxSocketIO::emitBinary (std::string& eventName, shared_ptr<string> const& bStr, string nsp) {
   if (client.opened()) {
     client.socket(nsp)->emit(eventName, bStr);

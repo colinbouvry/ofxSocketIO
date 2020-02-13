@@ -10,6 +10,8 @@
 #include "ofEvents.h"
 #if defined(_MSC_VER) || defined(_WIN32) || defined(WIN32) || defined(__MINGW32__)
   // Windows stuff
+  #include <sio_client.h>
+#include "sio_message.h"
 #else
   // Linux and OSX here
   #include <sio_client.h>
@@ -39,6 +41,7 @@ public :
 
   void emit(std::string& eventName);
   void emit(std::string& eventName, std::string& data, std::string nsp="");
+  void emit(std::string& eventName, sio::message::list const& msglist, std::string nsp="");
   void emitBinary(std::string& eventName, shared_ptr<string> const& bStr, std::string nsp="");
 
   void closeConnection();
