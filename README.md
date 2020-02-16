@@ -2,7 +2,7 @@
 
 ### Description
 
-`ofxSocketIO` is an ofxaddon that wraps [`socket.io-client-cpp`](https://github.com/socketio/socket.io-client-cpp). **It is still under active development.**
+`ofxSocketIO` is an ofxaddon that wraps [`socket.io-client-cpp`](https://github.com/socketio/socket.io-client-cpp). **It is still under ~~active~~ development.**
 
 ### Installation
 
@@ -72,6 +72,9 @@ void ofApp::onServerEvent (ofxSocketIOData& data) {
 ##### `getBoolValue(std::string key)`
 &rarr; Get the `bool` value for the specified key.
 
+##### `getVector()`
+&rarr; Get the raw vector if the message is not a map.
+
 ### Troubleshooting
 
 #### ping pong
@@ -91,11 +94,12 @@ You may experience issues with `'ping'` and `'pong'` events, as they are used in
 
 It exists thanks to the great work of the [socket.io-client-cpp contributors](https://github.com/socketio/socket.io-client-cpp/graphs/contributors).
 
-Finally, these folks has made some usefull contributions to `ofxSocketIO`:
+These folks have made some useful contributions to `ofxSocketIO` too:
 - [muraji](https://github.com/muraji)
 - [thorsonmscott](https://github.com/thorsonmscott)
 - [smulube](https://github.com/smulube)
 - [sy1vain](https://github.com/sy1vain)
+- [jedahan](https://github.com/jedahan)
 
 ### License
 
